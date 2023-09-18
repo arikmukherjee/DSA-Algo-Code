@@ -25,7 +25,7 @@ class stack
 
     void pop()
     {
-        if(top==top-1)
+        if(top==-1)
         {
             cout<<"stack underflow"<<endl;
             return;
@@ -80,6 +80,9 @@ int main()
         {
         case 1:
             cout<<"enter a value for push operation"<<endl;
+            int n;
+            cin>>n;
+            ob.push(n);
             break;
         case 2:
             ob.pop();
