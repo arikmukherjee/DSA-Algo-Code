@@ -1,56 +1,59 @@
-#include<iostream> 
+#include<iostream>
 using namespace std;
-
-class cl
+class BubbleSort
 {
-    int a[20], len,i,j;
-
-  public:
-    cl()
-    {
-        len = 5;
-    }
-    void Inputlength()
-    {
-        cout << "Enter length" << endl;
-        cin >> len;
-    }
-    void Inputarray()
-    {
-        for (i = 0; i < len; i++)
-            cin >> a[i];
-    }
-    void Display()
-    {
-        for (i = 0; i < len; i++)
-            cout << a[i] << " ";
-    }
-    void Bubblesort()
-    {
-        for (i = 0; i < len - 2; i++)
-        {
-            for (j = 0; j < len - i - 2; j++)
-            {
-                if (a[j] > a[j + 1])
-                {
-                    int t = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = t;
-                }
-            }
-        }
-    }
+	int a[20],length,i,j;
+	public:
+		BubbleSort()
+		{
+			length=5;
+		}
+		void input_length()
+		{
+			cout<<"Enter length"<<endl;
+			cin>>length;
+		}
+		void input_array()
+		{
+			cout<<"Enter array elements"<<endl;
+		    for(i=0;i<length;i++)
+			{
+				cin>>a[i];
+			}	
+		}
+		void display_array()
+		{
+		    for(i=0;i<length;i++)
+			{
+				cout<<a[i]<<" "<<endl;
+			}	
+		}
+		void bubbleSort()
+		{
+			for(i=0;i<length;i++)
+			{
+				for(j=0;j<length-i-1;j++)
+			    {
+				     if(a[j]>a[j+1])
+				     {
+				     	int temp=a[j];
+				     	a[j]=a[j+1];
+				     	a[j+1]=temp;
+					 }
+			    }
+			}
+		}
 };
 
 int main()
 {
-    cl ob;
-    ob.Inputlength();
-    ob.Inputarray();
-    cout<<"Array elements before sorting "<<endl;
-    ob.Display();
-    ob.Bubblesort();
-    cout<<"Array elements after sorting "<<endl;
-    ob.Display();
-    return 0;
+	BubbleSort ob;
+	ob.input_length();
+	ob.input_array();
+	cout<<"Array elements before sorting"<<endl;
+	ob.display_array();
+	ob.bubbleSort();
+	cout<<"Array elements after sorting"<<endl;
+	ob.display_array();
+	return 0;
 }
